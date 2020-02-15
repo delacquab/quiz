@@ -6,7 +6,7 @@ function App() {
 
   const questao1 = {
     pergunta: "Quanto é 1 + 1?",
-    acertou: false,
+    acertou: "",
     respondeu: false,
     respostas: [
       {
@@ -38,7 +38,7 @@ function App() {
 
   const questao2 = {
     pergunta: "Quanto é 2 + 2?",
-    acertou: false,
+    acertou: "",
     respondeu: false,
     respostas: [
       {
@@ -79,8 +79,10 @@ function App() {
       newQuestoes[chave.index].respostas[chave.index2].escolhida = !newQuestoes[chave.index].respostas[chave.index2].escolhida;
 
       if (newQuestoes[chave.index].respostas[chave.index2].correto) {
-        newQuestoes[chave.index].acertou = true
+        newQuestoes[chave.index].acertou = "correta"
         setQtdAcertou(qtdAcertou + 1)
+      }else {
+        newQuestoes[chave.index].acertou = "errada"
       }
 
       newQuestoes[chave.index].respondeu = true

@@ -8,11 +8,11 @@ function List(props) {
                     return (
                         <div>
 
-                            <h1 data-resposta={questao.acertou ? "correta" : "errada"} data-test="pergunta" key={index}>
+                            <h1  key={index}>
                                 {questao.pergunta}
                             </h1>
 
-                            <ul>
+                            <ul data-resposta={questao.acertou} data-test="pergunta">
                                 {questao.respostas.map((resp, index2) => {
                                     return (
                                         <li data-test="opcao" key={index2} onClick={e => props.onClick({ index, index2 })}>
